@@ -24,18 +24,18 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests()
+        http
+                .authorizeRequests()
+                .antMatchers("/register").permitAll()
                 .antMatchers("/auth/**").authenticated()
                 .antMatchers("/admin/**").hasAuthority("ADMIN")
                 .and()
                 .formLogin()
-                //todo сделать форму логина
-//                .loginPage("/auth/login")
-//                .loginProcessingUrl("/auth/login")
+                .loginPage("/login")
                 .permitAll()
                 .and()
                 .logout()
-                .logoutSuccessUrl("/")
+                .permitAll()
         ;
 
     }
