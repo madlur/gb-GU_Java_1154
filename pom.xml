@@ -77,9 +77,9 @@
                 <groupId>org.flywaydb</groupId>
                 <artifactId>flyway-maven-plugin</artifactId>
                 <version>5.2.1</version>
-                <configuration>               <url>jdbc:mysql://localhost:3306/geek_db?useSSL=false&amp;useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=UTC</url>
-                    <user>geek</user>
-                    <password>geek</password>
+                <configuration> <url>jdbc:mysql://localhost:3306/geek_db?useSSL=false&amp;allowPublicKeyRetrieval=true&amp;useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=UTC</url>
+                    <user>root</user>
+                    <password>root</password>
                     <schemas>
                         <schema>geek_db</schema>
                     </schemas>
