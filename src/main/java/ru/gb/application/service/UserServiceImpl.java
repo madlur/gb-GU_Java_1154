@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import ru.gb.application.entity.User;
 import ru.gb.application.repositories.UserRepository;
 
+import javax.transaction.Transactional;
 import java.util.Optional;
 
 @Service
@@ -21,6 +22,7 @@ public class UserServiceImpl implements UserDetailsService {
     }
 
     @Override
+    @Transactional
     public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
 
         Optional<User> mayBeUser = userRepository.findByEmail(userName);
